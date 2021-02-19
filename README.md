@@ -19,6 +19,6 @@
 - [x] User-based CF
 - [ ] Item-based CF
 - [ ] Matrix Factorization
-- [ ] Factorization Machine
+- [x] Factorization Machine
 - [ ] GBDT + LR
 

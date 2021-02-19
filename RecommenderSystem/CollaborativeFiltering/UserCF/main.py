@@ -88,8 +88,40 @@ def user_cf_rec(train_user_movies, test_user_movies, K=80, N=10):
 
     return rank_movies
 
+
+def recall(rec_dict, val_dict):
+    '''
+    rec_dict: {user_id1: {movie_id1, ……}, user_id2……}
+    val_dict: {user_id1: {movie_id1, ……}, user_id2……}
+    '''
+    hit_item = 0
+    all_item = 0
+
+    for user_id, movies in val_dict.items():
+        rec_set = rec_dict[user_id]
+        all_item += len(rec_set)
+        for movie in movies:
+            if movie in rec_set:
+                hit_item += 1
+    return round(hit_item / all_item * 100, 2)
+
+
+def precision(rec_dict, val_dict):
+    hit_item = 0
+    all_item = 0
+
+    for user_id, movies in rec_dict.items():
+        true_set = val_dict[user_id]
+        all_item += len(movies)
+        for movie in movies:
+            if movie in true_set:
+                hit_item += 1
+    return round(hit_item / all_item * 100, 2)
+
+
 def rec_eval(rec_movies, test_user_movies):
     pass
+
 
 if __name__ == "__main__":
     train_user_movies, test_user_movies = load_data()
