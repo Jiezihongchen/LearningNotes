@@ -12,7 +12,7 @@
 - [ ] LIGHTGBM
 - [ ] KMEANS
 - [ ] SVM
-- [ ] SVD
+- [x] SVD
 
 # RecommenderSystem
 
@@ -20,5 +20,5 @@
 - [ ] Item-based CF
 - [ ] Matrix Factorization
 - [x] Factorization Machine
-- [ ] GBDT + LR
+- [x] GBDT + LR
 
