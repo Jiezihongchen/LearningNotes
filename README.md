@@ -11,6 +11,7 @@
 - [ ] XGBOOST
 - [ ] LIGHTGBM
 - [ ] KMEANS
+- [ ] KNN
 - [ ] SVM
 - [x] SVD
 
@@ -20,5 +21,10 @@
 - [ ] Item-based CF
 - [ ] Matrix Factorization
 - [x] Factorization Machine
+- [ ] Field Factorization Machine
+- [ ] DeepFM
+- [ ] Wide & Deep
+- [ ] Mixed Logistic Regression
+- [ ] Deep Interest Network
 - [x] GBDT + LR
 
