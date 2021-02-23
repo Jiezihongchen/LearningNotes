@@ -1,4 +1,4 @@
-# 1. TwoSum
+###### [两数之和](https://leetcode-cn.com/problems/two-sum/)
 
 ```c++
 vector<int> twoSum(vector<int> &nums, int target) {
@@ -40,7 +40,7 @@ vector<vector<int>> twoSumTarget(vector<int> &nums, int target) {
 }
 ```
 
-# 2. ThreeSum
+###### [三数之和](https://leetcode-cn.com/problems/3sum/)
 
 ```c++
 vector<vector<int>> twoSumTarget(vector<int> &nums, int start, int target) {
@@ -64,7 +64,7 @@ vector<vector<int>> threeSumTarget(vector<int> &nums, int target) {
 }
 ```
 
-# 3. FourSum
+###### [四数之和](https://leetcode-cn.com/problems/4sum/)
 
 ```c++
 vector<vector<int>> fourSum(vector<int> &nums, int target) {

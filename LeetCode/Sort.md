@@ -72,6 +72,8 @@ int quickSort(vector<int> &a, int left, int right, int k) {
 
 ### 1.3.2 荷兰旗
 
+[]: https://leetcode.com/problems/sort-colors/
+
 ```c++
 
 ```
@@ -82,12 +84,19 @@ int quickSort(vector<int> &a, int left, int right, int k) {
 void mergeSort(vector<int> &nums, int l, int r, vector<int> &temp) {
     if (l + 1 >= r) return;
     int mid = l + (r - l) / 2;
+    
     mergeSort(nums, l, mid, temp);
     mergeSort(nums, mid, r, temp);
+    
     int p = l, q = mid, i = l;
-    while (p < m || q < r) {
-        if (q >= r || )
+    while (p < mid || q < r) {
+        if (q >= r || (p < mid && nums[p] <= nums[q])) {
+            temp[i++] = nums[p++];
+        } else {
+            temp[i++] = nums[q++];
+        }
     }
+    for (i = l; i < r; i++) nums[i] = temp[i];
 }
 ```
 

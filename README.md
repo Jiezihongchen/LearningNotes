@@ -13,7 +13,8 @@
 - [ ] KMEANS
 - [ ] KNN
 - [ ] SVM
-- [x] SVD
+- [ ] SVD
+- [ ] PCA
 
 # RecommenderSystem
 
