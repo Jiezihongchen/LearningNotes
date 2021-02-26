@@ -41,7 +41,25 @@ bool isValid(vector<string>& board, int row, int col) {
 }
 ```
 
-# 2. 岛屿问题
+###### [解数独](https://leetcode-cn.com/problems/sudoku-solver/)
+
+```c++
+
+```
+
+###### [岛屿数量](https://leetcode-cn.com/problems/number-of-islands/)
+
+```c++
+
+```
+
+###### [岛屿的最大面积](https://leetcode-cn.com/problems/max-area-of-island/)
+
+```c++
+
+```
+
+###### [统计封闭岛屿的数目](https://leetcode-cn.com/problems/number-of-closed-islands/)
 
 ```c++
 
