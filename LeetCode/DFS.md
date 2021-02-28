@@ -50,13 +50,57 @@ bool isValid(vector<string>& board, int row, int col) {
 ###### [岛屿数量](https://leetcode-cn.com/problems/number-of-islands/)
 
 ```c++
-
+int n, m, ans;
+int numIslands(vector<vector<char>>& grid) {
+    if (!grid.size() || !grid[0].size()) return 0;
+    n = grid.size(); m = grid[0].size(); ans = 0;
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < m; j++) {
+            if (grid[i][j] == '1') {
+                dfs(grid, i, j);
+                ans++;
+            }
+        }
+    }
+    return ans;
+}
+void dfs(vector<vector<char>> &grid, int row, int col) {
+    if (row < 0 || col < 0 || row >= n || col >= m || grid[row][col] == '0') return;
+    grid[row][col] = '0';
+    dfs(grid, row, col - 1);
+    dfs(grid, row - 1, col);
+    dfs(grid, row, col + 1);
+    dfs(grid, row + 1, col);
+}
 ```
 
 ###### [岛屿的最大面积](https://leetcode-cn.com/problems/max-area-of-island/)
 
 ```c++
-
+int n, m, ans, temp;
+int maxAreaOfIsland(vector<vector<int>>& grid) {
+    if (!grid.size() || !grid[0].size()) return 0;
+    n = grid.size(); m = grid[0].size(); ans = 0;
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < m; j++) {
+            if (grid[i][j] == 1) {
+                temp = 0;
+                dfs(grid, i, j);
+                ans = max(ans, temp);
+            }
+        }
+    }
+    return ans;
+}
+void dfs(vector<vector<int>>& grid, int row, int col) {
+    if (row < 0 || row >= n || col < 0 || col >= m || grid[row][col] == 0) return;
+    grid[row][col] = 0;
+    temp++;
+    dfs(grid, row, col - 1);
+    dfs(grid, row, col + 1);
+    dfs(grid, row - 1, col);
+    dfs(grid, row + 1, col);
+}
 ```
 
 ###### [统计封闭岛屿的数目](https://leetcode-cn.com/problems/number-of-closed-islands/)

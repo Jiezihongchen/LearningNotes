@@ -45,6 +45,26 @@ void dfs(TreeNode *root, int &n, int &ans) {
 ###### [二叉树的锯齿形层序遍历](https://leetcode-cn.com/problems/binary-tree-zigzag-level-order-traversal/)
 
 ```c++
-
+vector<vector<int>> zigzagLevelOrder(TreeNode* root) {
+    vector<vector<int>> res;
+    if (!root) return res;
+    queue<TreeNode*> q; q.push(root);
+    bool flag = true;
+    while (!q.empty()) {
+        int siz = q.size();
+        TreeNode* temp;
+        deque<int> dq;
+        while (siz--) {
+            temp = q.front(); q.pop();
+            if (flag) dq.push_back(temp->val);
+            else dq.push_front(temp->val);
+            if (temp->left) q.push(temp->left);
+            if (temp->right) q.push(temp->right);
+        }
+        flag = !flag;
+        res.push_back(vector<int>{dq.begin(), dq.end()});
+    }
+    return res;
+}
 ```
 

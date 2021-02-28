@@ -1,3 +1,39 @@
+###### KMP
+
+```c++
+void getNext(char str[], int length) {
+    int j = -1;
+    next[0] = -1;
+    for (int i = 0; i < length; i++) {
+        while (j != -1 && str[i] != str[j + 1]) j = next[j];
+        if (str[i] == str[j + 1]) j++;
+        next[i] = j;
+    }
+}
+bool KMP(char text[], char pattern[]) {
+    int n = strlen(text), m = strlen(pattern);
+    getNext(pattern, m);
+    int j = -1;
+    for (int i = 0; i < n; i++) {
+        while (j != -1 && text[i] != pattern[j + 1]) j = next[j];
+        if (text[i] == pattern[j + 1]) j++;
+        if (j == m - 1) return true;
+    }
+    return false;
+}
+void getNextval(char str[], int lenght) {
+    int j = -1;
+    for (int i = 1; i < lenght; i++) {
+        while (j != -1 && str[i] != str[j + 1]) j = nextval[j];
+        if (str[j + 1] == str[i]) j++;
+        if (j == -1 && str[j + 1] != str[i])
+            nextval[i] = j;
+        else
+            nextval[i] = nextval[j];
+    }
+}
+```
+
 ###### [最长回文子串](https://leetcode-cn.com/problems/longest-palindromic-substring/)
 
 ```c++
@@ -40,6 +76,12 @@ int minDistance(string word1, string word2) {
 ```
 
 ###### [两个字符串的最小ASCII删除和](https://leetcode-cn.com/problems/minimum-ascii-delete-sum-for-two-strings/)
+
+```c++
+
+```
+
+###### [判断子序列](https://leetcode-cn.com/problems/is-subsequence/)
 
 ```c++
 
